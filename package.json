@@ -1,0 +1,34 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "A REST API for handling books data",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-katte/BookStore-REST-API.git"
+  },
+  "author": "Nikhil Katte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n-katte/BookStore-REST-API/issues"
+  },
+  "homepage": "https://github.com/n-katte/BookStore-REST-API#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.3",
+    "express-validator": "^6.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.19",
+    "nodemon": "^2.0.4",
+    "npm": "^6.14.5",
+    "uuid": "^8.1.0"
+  }
+}
