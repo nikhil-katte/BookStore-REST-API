@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
+
 var Schema = mongoose.Schema;
+
 var bookSchema = new Schema(
   {
     title: {
@@ -9,7 +11,7 @@ var bookSchema = new Schema(
     },
     description: {
       type: String,
-      required:true,
+      required: true,
     },
     author: {
       type: ObjectId,

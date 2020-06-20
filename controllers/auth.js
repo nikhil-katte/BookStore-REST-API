@@ -34,6 +34,7 @@ exports.signin = (req, res) => {
       message: errors.array()[0].param,
     });
   }
+
   Author.findOne({ email }, (err, author) => {
     if (err || !author) {
       return res.status(400).json({
@@ -55,6 +56,7 @@ exports.signin = (req, res) => {
     return res.json({ token, author: { _id, name, email } });
   });
 };
+
 //protected routes
 exports.isSignedIn = expressJwt({
   secret: process.env.SECERET,

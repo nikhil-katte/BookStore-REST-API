@@ -1,19 +1,20 @@
+// For getting secrets and passwords of database
 require("dotenv").config();
 
 const mongoose = require("mongoose");
-
 const express = require("express");
-const app = express();
-
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-Parser");
-const cors = require("cors");
 
-// roues
- const authRoutes =require("./routes/auth") 
-const authorRoutes =require("./routes/author")
-const bookRoutes = require("./routes/book")
-//Dbconnection
+const cors = require("cors");
+const app = express();
+
+//getting all routes
+const authRoutes = require("./routes/auth");
+const authorRoutes = require("./routes/author");
+const bookRoutes = require("./routes/book");
+
+//Establishing connection with Database
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
@@ -23,20 +24,21 @@ mongoose
   .then(() => {
     console.log("DB CONNECTED");
   });
-  //midle wears
+
+//Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
-//routes
-app.use("/api",authRoutes)
-app.use("/api",authorRoutes)
-app.use("/api",bookRoutes)
+//Accepting all routes
+app.use("/api", authRoutes);
+app.use("/api", authorRoutes);
+app.use("/api", bookRoutes);
 
-//ports
+//Using ports
 const port = process.env.PORT || 8000;
 
-//starting server
+//Making server listen to incoming requests
 app.listen(port, () => {
   console.log(`app is running at ${port}`);
 });
