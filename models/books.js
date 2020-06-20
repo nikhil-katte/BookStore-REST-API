@@ -9,11 +9,11 @@ var bookSchema = new Schema(
     },
     description: {
       type: String,
-      required,
+      required:true,
     },
     author: {
       type: ObjectId,
-      ref: "author",
+      ref: "Author",
       required: true,
     },
     price: {
