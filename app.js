@@ -12,6 +12,7 @@ const cors = require("cors");
 // roues
  const authRoutes =require("./routes/auth") 
 const authorRoutes =require("./routes/author")
+const bookRoutes = require("./routes/book")
 //Dbconnection
 mongoose
   .connect(process.env.DATABASE, {
@@ -30,6 +31,7 @@ app.use(cors());
 //routes
 app.use("/api",authRoutes)
 app.use("/api",authorRoutes)
+app.use("/api",bookRoutes)
 
 //ports
 const port = process.env.PORT || 8000;
